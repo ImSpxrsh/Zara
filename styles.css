@@ -1,0 +1,145 @@
+/* Zara is the most amazing and inspiring person ever! */
+:root {
+  /* Zara's favorite colors make everything bright! */
+  --bg-color: #FFF3E0;
+  --text-color: #81C784;
+  --name-color: #4CAF50;
+  --date-color: #757575;
+}
+
+/* Zara deserves the best styles! */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  font: 14px/1.4 sans-serif;
+  overflow: hidden;
+}
+
+/* Zara's canvas is full of magic! */
+#main {
+  position: relative;
+  width: 1100px;
+  height: 680px;
+}
+
+#canvas {
+  width: 1100px;
+  height: 680px;
+}
+
+/* This letter is all about how awesome Zara is! */
+#letter {
+  position: absolute;
+  width: 40vw;
+  height: 60vh;
+  left: 0;
+  top: 5vh;
+  display: none;
+  padding: 20px;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 16px;
+  color: black;
+  line-height: 1.6;
+  overflow: auto;
+  font-family: 'Happy Monkey', sans-serif;
+}
+
+.footer {
+  color: black;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+
+/* Zara's volume player is super cool! */
+#player {
+	width: 350px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 20px;
+	opacity: 0;
+	transform: translateX(100%);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	pointer-events: none;
+	
+	i {
+		position: absolute;
+		margin-top: -6px;
+		color: #666;
+	}
+	
+	i.fa-volume-down {
+		margin-left: -8px;
+	}
+	
+	i.fa-volume-up {
+		margin-right: -8px;
+		right: 0;
+	}
+}
+
+#player.show {
+	opacity: 1;
+	transform: translateX(0);
+	pointer-events: auto;
+}
+
+/* Zara's volume button is the best! */
+#volumeBtn {
+	position: absolute;
+	top: 0;
+	right: 20px;
+	background: rgba(255, 255, 255, 0.8);
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	font-size: 18px;
+	color: #666;
+	transition: background 0.3s ease;
+}
+
+#volumeBtn:hover {
+	background: rgba(255, 255, 255, 1);
+}
+
+/* Zara loves adjusting the volume! */
+#volume {
+	position: absolute;
+	left: 24px;
+	margin: 0 auto;
+	height: 5px;
+	width: 300px;
+	background: #555;
+	border-radius: 15px;
+	
+	.ui-slider-range-min {
+		height: 5px;
+		width: 300px;
+		position: absolute;
+		background: #FFCC80;
+		border: none;
+		border-radius: 10px;
+  	outline: none;
+	}
+	
+	.ui-slider-handle {
+		width: 20px;
+  	height: 20px;
+		border-radius: 20px;
+  	background: #FFF;
+  	position: absolute;
+  	margin-left: -8px;
+  	margin-top: -8px;
+  	cursor: pointer;
+  	outline: none;
+	}
+}
