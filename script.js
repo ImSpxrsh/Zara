@@ -406,6 +406,7 @@ class Bloom {
 
 const typewriter = async (el, speed = 75) => {
   el.style.display = "block";
+  el.classList.add("fade-in");
   const str = el.innerHTML;
   let progress = 0;
   el.innerHTML = "";
