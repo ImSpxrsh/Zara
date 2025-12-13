@@ -13,6 +13,18 @@ const inheart = (x, y, r) => {
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+const colorPalette = [
+  '#590d22', // night-bordeaux
+  '#800f2f', // dark-amaranth
+  '#a4133c', // cherry-rose
+  '#c9184a', // rosewood
+  '#ff4d6d', // bubblegum-pink
+  '#ff758f', // bubblegum-pink-2
+  '#ff8fa3', // cotton-candy
+  '#ffb3c1', // cherry-blossom
+  '#ffccd5', // pastel-pink
+  '#fff0f3'  // lavender-blush
+];
 
 class Point {
   constructor(x = 0, y = 0) {
@@ -44,7 +56,7 @@ class Star {
 }
 
 class Seed {
-  constructor(tree, point, scale = 1, color = "#FFCC80") {
+  constructor(tree, point, scale = 1, color = "#c9184a") {
     this.tree = tree;
     this.heart = { point, scale, color, figure: new Star() };
     this.circle = { point, scale, color, radius: 5 };
@@ -152,7 +164,7 @@ class Footer {
     const { ctx } = this.tree;
     const { point, height, length, width, speed } = this;
     ctx.save();
-    ctx.strokeStyle = "rgb(129, 199, 132)"; 
+    ctx.strokeStyle = "rgb(164, 19, 60)"; 
     ctx.lineWidth = height;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -284,7 +296,7 @@ class Tree {
       for (let i = 0; i < random(1, 2); i++) {
         this.blooms.push(this.createBloom(
           width / 2 + width, height, 240, figure, 
-          `rgb(255,${random(0, 255)},${random(0, 255)})`, 
+          colorPalette[random(0, colorPalette.length - 1)], 
           1, null, 1, 
           new Point(random(-100, 600), 720), 
           random(200, 300)
@@ -324,8 +336,8 @@ class Branch {
     const { ctx } = this.tree;
     ctx.save();
     ctx.beginPath();
-    ctx.fillStyle = "rgb(190, 26, 37)"; 
-    ctx.shadowColor = "rgb(190, 26, 37)";
+    ctx.fillStyle = "rgb(128, 15, 47)"; 
+    ctx.shadowColor = "rgb(128, 15, 47)";
     ctx.shadowBlur = 2;
     ctx.moveTo(p.x, p.y);
     ctx.arc(p.x, p.y, this.radius, 0, Math.PI * 2);
@@ -337,7 +349,7 @@ class Branch {
 
 
 class Bloom {
-  constructor(tree, point, figure, color = "#FFCC80", 
+  constructor(tree, point, figure, color = "#c9184a", 
     alpha = random(0.3, 1), angle = random(0, 360), scale = 0.1, place, speed) {
     this.tree = tree;
     this.point = point;
@@ -510,7 +522,7 @@ async function animateTreeMove(tree, footer) {
 
 async function prepareBackground(tree, canvas) {
   canvas.parentNode.style.background = `url(${tree.toDataURL("image/png")})`;
-  canvas.style.background = "#ffe";
+  canvas.style.background = "transparent";
   await sleep(AnimationConfig.BACKGROUND_FADE_DELAY);
   canvas.style.background = "none";
 }
@@ -543,7 +555,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   
   const opts = {
-    seed: { x: w / 2 - 20, color: "rgb(190, 26, 37)", scale: 3 },  
+    seed: { x: w / 2 - 20, color: "rgb(128, 15, 47)", scale: 3 },  
     branch: [[535, 680, 570, 250, 500, 200, 30, 100, [
       [540, 500, 455, 417, 340, 400, 13, 100, [[450, 435, 434, 430, 394, 395, 2, 40]]],
       [550, 445, 600, 356, 680, 345, 12, 100, [[578, 400, 648, 409, 661, 426, 3, 80]]],
