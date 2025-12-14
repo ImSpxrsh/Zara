@@ -1,7 +1,7 @@
 const CONFIG = {
   
   letter: {
-    paragraph1: `Sparsh Roy, Zuzu Ghauri
+    paragraph1: `Sparsh Roy, Zuzu Ghauri :)
 December 11, 2025
 To: Ms. Zara Uddin`,
     paragraph2: `Dear Zara Uddin,
@@ -25,5 +25,5 @@ Zuzu :) and Sparsh :P`
   },
   
   
-  seedText: 'from\nSparsh & Zuzu'
+  seedText: 'from\nSparsh & Zuzu!!'
 };
