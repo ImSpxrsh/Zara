@@ -25,5 +25,5 @@ Zuzu :) and Sparsh :P`
   },
   
   
-  seedText: 'from\nSparsh & Zuzu!!'
+  seedText: 'from\nSparsh & Zuzu!'
 };
